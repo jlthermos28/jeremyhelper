@@ -9,7 +9,16 @@ master = Tk()
  
 # sets the geometry of main
 # root window
-master.geometry("200x200")
+master.geometry("1200x500")
+
+master.title("WELCOME TO THE JEREMY HELPER!")
+
+Label(master, text ="WARNING, CLOSING THIS WINDOW WILL RESULT IN CLOSING ALL SUBSEQUENT WINDOWS THAT YOU OPENED USING THE BUTTONS BELOW", foreground= "white", background="red", font= 100, relief= "ridge").pack()
+
+
+
+Message(master, text = "WELCOME TO THE JEREMY HELPER! THIS PROGRAM IS DESIGNED TO GIVE YOU A SHORTCUT FOR EVERYTHING RELATED TO CSR'S BECAUSE YOU'RE LAZY!", foreground= "white", 
+        font=90, width=1000, justify="center", background= "blue").pack(pady = 10)
  
  
 # function to open a new window
@@ -22,7 +31,7 @@ def openNewWindow():
  
     # sets the title of the
     # Toplevel widget
-    newWindow.title("New Window")
+    newWindow.title("Test Window")
  
     # sets the geometry of toplevel
     newWindow.geometry("200x200")
@@ -39,10 +48,18 @@ label.pack(pady = 10)
  
 # a button widget which will open a
 # new window on button click
-btn = Button(master,
-             text ="Click to open a new window",
+btnpre = Button(master,
+             text ="Test button #1",
              command = openNewWindow)
-btn.pack(pady = 10)
- 
+btnpre.pack(pady = 10)
+
+
+
+
+
+btnpostdep = Button(master, text="Test button #2", command = openNewWindow)
+
+
+btnpostdep.pack()
 # mainloop, runs infinitely
 mainloop()
