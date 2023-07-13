@@ -1,0 +1,32 @@
+Logic: (Was this a new user or replacement?).
+	(Laptop or Desktop?) 
+
+New:
+The deploy took place in (Building and room number). The new computer is a (Model) with tag (tag).
+I had the user sign into the new machine with their domain account and installed the
+wired and (laptop: wireless) certs. I had the user log into (list software user logged into). 
+(Printers mapped? If yes, list dns with commas) Share drives mapped with paths (paths separated by commas if multiple) 
+(Enrolled in pgp?) If yes: I enrolled the user in PGP on the
+machine and restarted the machine (if laptop: with the ethernet disconnected) to demonstrate
+the process. I also restocked the users (Old device) w/ tag (old tag). The user did not
+need any other data off the (old device). I deployed the equipment in Stock Tracking.I lastly placed the CSR, Equipment
+Tracking Forms and deployment checklists, into their appropriate bins.
+
+
+
+
+
+Replacement:
+The deploy took place in (Building and room number). The new computer is a (Model) with tag (tag).
+Transferred the data of the users bookmarks and data onto (pluto or ssd). (Was onedrive used in the backup process?) 
+(Tsm or temp folder?). I had the
+user sign into the new machine with their domain account and installed the
+wired and wireless certs. I had the user log into (list software user logged into). 
+Transferred the bookmarks and data onto the new machine.
+(Printers mapped? If yes, list dns with commas) Share drives mapped with paths (paths separated by commas if multiple) 
+(Enrolled in pgp?) If yes: I enrolled the user in PGP on the
+machine and restarted the machine (if laptop: with the ethernet disconnected) to demonstrate
+the process. I also restocked the users (Old device) w/ tag (old tag). The user did not
+need any other data off the (old device). I deployed the equipment in Stock Tracking. I
+updated the replacement spreadsheet. I lastly placed the CSR, Equipment
+Tracking Forms and deployment checklists, into their appropriate bins.

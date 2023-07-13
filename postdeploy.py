@@ -7,7 +7,7 @@ import tkinter as tk
 
 def postdeploywindow():
         postdeploy = Tk()
-
+        postdeploy.title("Post Deploy Template")
         postdeploy.geometry("1000x500")
 
         mainloop()
