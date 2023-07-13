@@ -4,10 +4,16 @@
 from tkinter import *
 from tkinter.ttk import *
 import tkinter as tk
- 
+import postdeploy
+
+
+
+
+
+
 # creates a Tk() object
 master = Tk()
- 
+
 # sets the geometry of main
 # root window
 master.geometry("1200x500")
@@ -68,13 +74,8 @@ def openNewPre():
                 #subwindow.update()
                 #subwindow.destroy()
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
-
-      
-
         
-        desktopoutputlabel = submissionmodel + ' Tag ' + submissiontag + ' was reserved in Stock Tracking under ' + submissionusername +'. It is imaged with a '+ submissionimage +' image, it was final stepped as ' + submissionfinalstep +', joined to the domain, desktop and user were added as administrators. Windows updates are up to date. AD description has been changed, DA '+ submissionda +' moved it into the appropriate OU. GPUpdate was run, and Trellix installed successfully. Bios is updated to '+ submissionbios + ' and boot settings were checked. '+ pgpfix + submissionsoftware + ' was installed. Thermal Drivers were updated and Lenovo Intelligent Solution was '+ submissionthermal + ' in services.  Computer is in '+ submissionlocation + ' on '+ submissionshelf + '.'
-        
-        outputlabel = submissionmodel + ' Tag ' + submissiontag + ' was reserved in Stock Tracking under ' + submissionusername +'. It is imaged with a '+ submissionimage +' image, it was final stepped as ' + submissionfinalstep +', joined to the domain, desktop and user were added as administrators. Windows updates are up to date. AD description has been changed, DA '+ submissionda +' moved it into the appropriate OU. GPUpdate was run, and Trellix installed successfully. Bios is updated to '+ submissionbios + ' and boot settings were checked. ' + pgpfix + submissionsoftware + ' was installed. Thermal Drivers were updated and Lenovo Intelligent Solution was '+ submissionthermal + ' in services.  Computer is in '+ submissionlocation + ' on '+ submissionshelf + '.'
+        outputlabel = submissionmodel + ' with tag #' + submissiontag + ' was reserved in Stock Tracking under ' + submissionusername +'. It is imaged with a '+ submissionimage +' image, it was final stepped as ' + submissionfinalstep +', joined to the domain, desktop and user were added as administrators. Windows updates are up to date. AD description has been changed, DA '+ submissionda +' moved it into the appropriate OU. GPUpdate was run, and Trellix installed successfully. Bios is updated to '+ submissionbios + ' and boot settings were checked. ' + pgpfix + submissionsoftware + ' was installed. Thermal Drivers were updated and Lenovo Intelligent Solution was '+ submissionthermal + ' in services. Computer is in '+ submissionlocation + ' in '+ submissionshelf + '.'
         
         #outputlabel.pack()
 
@@ -89,7 +90,7 @@ def openNewPre():
         #submission_var.set("")
 
         
-     
+    
 
 
 
@@ -97,11 +98,11 @@ def openNewPre():
     # be treated as a new window
     newWindow = Toplevel(master)
 
- 
+
     # sets the title of the
     # Toplevel widget
     newWindow.title("Predeploy")
- 
+
     # sets the geometry of toplevel
     newWindow.geometry("1000x500")
 
@@ -172,50 +173,50 @@ def openfalsewindow():
     Label(falsewindow, text = "PLEASE GO AND RESERVE THE MACHINE...NOW!!!", foreground= 'red', font = 90).pack()
 
 def confirmpre():
-     confwindow = Toplevel(master)
-     confwindow.title("RESERVE CHECK")
+    confwindow = Toplevel(master)
+    confwindow.title("RESERVE CHECK")
 
-     Label(confwindow, text="DID YOU RESERVE THE MACHINE IN STOCK TRACKING?", foreground= 'red', font = 90).pack()
-     yesbutton = Button(confwindow, text = "Yes", command = combine_funcs(deskorlap, confwindow.destroy))
-     nobutton = Button(confwindow, text = "No", command = openfalsewindow)
-     yesbutton.pack()
-     nobutton.pack()
+    Label(confwindow, text="DID YOU RESERVE THE MACHINE IN STOCK TRACKING?", foreground= 'red', font = 90).pack()
+    yesbutton = Button(confwindow, text = "Yes", command = combine_funcs(deskorlap, confwindow.destroy))
+    nobutton = Button(confwindow, text = "No", command = openfalsewindow)
+    yesbutton.pack()
+    nobutton.pack()
 
 
 def deskorlap():
-     def selection():
-          global pgpfix
-          if (var1.get() == 1):
-               pgpfix = "PGP fix was run. "
-          elif (var2.get() == 1) & (var3.get() == 0):
-               pgpfix = ""
-          elif (var2.get() ==1) & (var3.get() == 1):
-               pgpfix = "PGP fix was run. "  
+    def selection():
+        global pgpfix
+        if (var1.get() == 1):
+            pgpfix = "PGP fix was run. "
+        elif (var2.get() == 1) & (var3.get() == 0):
+            pgpfix = ""
+        elif (var2.get() ==1) & (var3.get() == 1):
+            pgpfix = "PGP fix was run. "  
     
 
 
-     desklap = Toplevel(master)
-     desklap.geometry("300x300")
-     desklap.title("LAPTOP SEPCIFICATION")
-     Label(desklap, text="Please check off all that apply.", font = 75).grid(row=1, sticky=W)
-     var1 = tk.IntVar()
-     var2 = tk.IntVar()       
-     var3 = tk.IntVar()
-     laptop = tk.Checkbutton(desklap, text = "Laptop", variable= var1, onvalue = 1, offvalue = 0)
-     desktop = tk.Checkbutton(desklap, text = "Desktop", variable= var2, onvalue=1, offvalue=0)
-     specialdesktop = tk.Checkbutton(desklap, text="Business, HR, or Payroll", variable= var3, onvalue= 1, offvalue= 0)
-     submitselection = Button(desklap, text = "Submit", command = combine_funcs(selection, openNewPre))
-     laptop.grid(row=2, sticky=W)
-     desktop.grid(row = 3, sticky= W)
-     specialdesktop.grid(row=4, sticky=E)
-     submitselection.grid(row=5, sticky = W)
-     
-                 
+    desklap = Toplevel(master)
+    desklap.geometry("300x300")
+    desklap.title("LAPTOP SEPCIFICATION")
+    Label(desklap, text="Please check off all that apply.", font = 75).grid(row=1, sticky=W)
+    var1 = tk.IntVar()
+    var2 = tk.IntVar()       
+    var3 = tk.IntVar()
+    laptop = tk.Checkbutton(desklap, text = "Laptop", variable= var1, onvalue = 1, offvalue = 0)
+    desktop = tk.Checkbutton(desklap, text = "Desktop", variable= var2, onvalue=1, offvalue=0)
+    specialdesktop = tk.Checkbutton(desklap, text="Business, HR, or Payroll", variable= var3, onvalue= 1, offvalue= 0)
+    submitselection = Button(desklap, text = "Submit", command = combine_funcs(selection, openNewPre))
+    laptop.grid(row=2, sticky=W)
+    desktop.grid(row = 3, sticky= W)
+    specialdesktop.grid(row=4, sticky=E)
+    submitselection.grid(row=5, sticky = W)
+    
+                
 
-          
+        
 
 
- 
+
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
 
@@ -223,16 +224,18 @@ def deskorlap():
 
 
 label = Label(master,
-              text ="This is the main window")
- 
+            text ="This is the main window")
+
 label.pack(pady = 10)
- 
+
 # a button widget which will open a
 # new window on button click
 btnpre = Button(master,
-             text ="Predeploy Template",
-             command = confirmpre)
+            text ="Predeploy Template",
+            command = confirmpre)
 btnpre.pack(pady = 10)
+
+btnpost = Button(master, text="Postdeploy Template", command = postdeploy.postdeploywindow).pack(pady=10)
 
 
 
