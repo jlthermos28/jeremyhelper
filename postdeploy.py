@@ -8,7 +8,8 @@ import tkinter as tk
 def postdeploywindow():
         postdeploy = Tk()
         postdeploy.title("Post Deploy Template")
-        postdeploy.geometry("1000x500")
+        postdeploy.geometry("500x500")
+        
         
         #pre logic variable for the pre logic question
         neworreplace = 1 #1 is new, 2 is replacement
